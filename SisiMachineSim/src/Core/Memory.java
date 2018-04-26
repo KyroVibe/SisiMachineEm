@@ -1,11 +1,15 @@
 package Core;
 
-import javax.swing.JFrame;
-import javax.swing.JTextField;
+import javax.swing.*;
+import java.util.*;
 
 public class Memory {
+	
+	// --- Variables ---
+	
+	public List<List<JTextField>> RamArray = new ArrayList<List<JTextField>>();
 
-public JFrame frame;
+	public JFrame frame;
 	
 	public Memory(int width, int height) {
 		frame = new JFrame("FFUCUUCKCKCKCKCKKC");
@@ -15,7 +19,14 @@ public JFrame frame;
 		frame.setResizable(false);
 		
 		//Insert all shit here
-		CreateTable();
+		for (int x = 0; x < 16; x++) {
+			CreateText(20 + x * 20, 0, 20, 20, false, Main.inst.hexChar[x]);
+		}
+		for (int y = 0; y < 16; y++) {
+			CreateText(0, 20 + y * 20, 20, 20, false, Main.inst.hexChar[y]);
+		}
+		
+		CreateTable(16, 16);
 		
 		JTextField a = new JTextField();
 		a.setEnabled(false);
@@ -24,10 +35,17 @@ public JFrame frame;
 		frame.setVisible(true);
 	}
 	
-	public void CreateTable() {
-		CreateText(0, 0, 20, 20, true, "00");
+	public void CreateTable(int sizeX, int sizeY) {
+		//CreateText(0, 0, 20, 20, true, "00");
 		
 		//Create Ram Array
+		for (int x = 0; x < sizeX; x++) {
+			List<JTextField> temps = new ArrayList<JTextField>();
+			
+			for (int y = 0; y < sizeY; y++) {
+				temps.add(CreateText(20 + x * 20, 20 + y * 20, 20, 20, true, "00"));
+			}
+		}
 	}
 	
 	public JTextField CreateText(int x, int y, int width, int height, boolean editable, String txt) {

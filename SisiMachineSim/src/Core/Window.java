@@ -5,6 +5,11 @@ import javax.swing.text.*;
 
 public class Window {
 	
+	// --- Variables ---
+	
+	public JTextField IR, PC, Decoded;
+	public JButton ClearRun, ClearCpu, Run, Step;
+	
 	public JFrame frame;
 	
 	public Window(int width, int height) {
