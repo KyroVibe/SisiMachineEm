@@ -54,10 +54,13 @@ public class Main {
 	public void Step() {
 		if (stage == 0) {
 			Fetch();
+			stage++;
 		} else if (stage == 1) {
 			Decode();
+			stage++;
 		} else if (stage == 2) {
 			Execute();
+			stage = 0;
 		} else {
 			System.out.println("Very big problem");
 		}
