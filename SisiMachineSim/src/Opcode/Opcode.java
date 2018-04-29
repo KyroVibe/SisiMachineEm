@@ -2,8 +2,8 @@ package Opcode;
 
 public abstract class Opcode {
 	
-	public abstract String Decode();
+	public abstract String Decode(String ir);
 
-	public abstract void Execute();
+	public abstract void Execute(String ir);
 	
 }

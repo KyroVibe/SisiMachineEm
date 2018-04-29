@@ -39,12 +39,14 @@ public class Memory {
 		//CreateText(0, 0, 20, 20, true, "00");
 		
 		//Create Ram Array
-		for (int x = 0; x < sizeX; x++) {
+		for (int x = 0; x < sizeY; x++) {
 			List<JTextField> temps = new ArrayList<JTextField>();
 			
-			for (int y = 0; y < sizeY; y++) {
+			for (int y = 0; y < sizeX; y++) {
 				temps.add(CreateText(20 + x * 20, 20 + y * 20, 20, 20, true, "00"));
 			}
+			
+			RamArray.add(temps);
 		}
 	}
 	

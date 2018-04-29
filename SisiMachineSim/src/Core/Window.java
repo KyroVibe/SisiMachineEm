@@ -2,6 +2,8 @@ package Core;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.*;
 import javax.swing.text.*;
@@ -10,8 +12,10 @@ public class Window {
 	
 	// --- Variables ---
 	
-	public JTextField IR, PC, Decoded;
+	public JTextField IR, PC, Decoded, Stage;
 	public JButton ClearRun, ClearCpu, Run, Step;
+	
+	public List<JTextField> regs = new ArrayList<JTextField>();
 	
 	public JFrame frame;
 	
@@ -40,10 +44,17 @@ public class Window {
 		
 		for (int i = 0; i < 16; i++) {
 			CreateText(0, 20 + i * 20, 20, 20, false, Main.inst.DecToHex(i));
-			CreateText(20, 20 + i * 20, 20, 20, true, "00");
+			regs.add(CreateText(20, 20 + i * 20, 20, 20, false, "00"));
 		}
 		
-		Step = CreateButton(60, 20, 160, 40, "Step");
+		//TextFields
+		PC = CreateText(60, 20, 160, 30, false, "PC | ");
+		IR = CreateText(60, 60, 160, 30, false, "IR | ");
+		Decoded = CreateText(60, 100, 240, 30, false, "Decoded | ");
+		Stage = CreateText(60, 140, 240, 30, false, "Stage | ");
+		
+		//Buttons
+		Step = CreateButton(60, 180, 160, 30, "Step");
 		Step.addActionListener(new ActionListener() {
 
 			@Override
@@ -58,7 +69,11 @@ public class Window {
 		JTextField a = new JTextField();
 		a.setBounds(x, y, width, height);
 		a.setEditable(editable);
-		a.setDocument(new JTextFieldLimit(txt.length()));
+		if (editable) {
+			a.setDocument(new JTextFieldLimit(txt.length()));
+		} else {
+			a.setDocument(new JTextFieldLimit(40));
+		}
 		a.setText(txt);
 		
 		frame.add(a);
