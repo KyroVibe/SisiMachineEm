@@ -50,6 +50,10 @@ public class Memory {
 		}
 	}
 	
+	
+	
+	//Util Functions
+	
 	public JTextField CreateText(int x, int y, int width, int height, boolean editable, String txt) {
 		JTextField a = new JTextField();
 		a.setBounds(x, y, width, height);

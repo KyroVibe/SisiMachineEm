@@ -77,8 +77,10 @@ public class Main {
 		inst = this;
 		
 		window = new Window(400, 600);
-		memory = new Memory(345, 368); //Change those fucking numbers
+		memory = new Memory(345, 368); //Change those %%%%ing numbers
 	}
+	
+	
 	
 	//Add Fetch, Decode, and Execute, along with HexToDec and DecToHex, The Hex characters array, Opcode arrays. Also, make opcodes
 	
@@ -139,6 +141,8 @@ public class Main {
 	}
 	
 	
+	
+	// Util Functions
 	
 	public String DecToHex(int i) {
 		return hexChar[i];

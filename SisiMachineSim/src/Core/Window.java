@@ -4,9 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.*;
-import javax.swing.text.*;
 
 public class Window {
 	
@@ -26,7 +24,7 @@ public class Window {
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
 		
-		//Insert all shit here
+		//Insert all %%%% here
 		CreateTable();
 		
 		JTextField a = new JTextField();
@@ -80,6 +78,10 @@ public class Window {
 		});
 	}
 	
+	
+	
+	//Util Functions
+	
 	public JTextField CreateText(int x, int y, int width, int height, boolean editable, String txt) {
 		JTextField a = new JTextField();
 		a.setBounds(x, y, width, height);
@@ -115,7 +117,5 @@ public class Window {
 		Decoded.setText("Decoded | ");
 		Stage.setText("Stage | ");
 	}
-	
-	
 	
 }

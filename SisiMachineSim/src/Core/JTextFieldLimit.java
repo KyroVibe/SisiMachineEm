@@ -5,7 +5,11 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 
 public class JTextFieldLimit extends PlainDocument {
-	  private int limit;
+	
+	//Added to avoid warnings
+	private static final long serialVersionUID = 1L;
+	
+	private int limit;
 
 	  JTextFieldLimit(int limit) {
 	   super();
