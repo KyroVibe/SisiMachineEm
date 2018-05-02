@@ -67,7 +67,8 @@ public class Main {
 		new Opcode8(),
 		new Opcode9(),
 		new OpcodeA(),
-		new OpcodeB()
+		new OpcodeB(),
+		new OpcodeC()
 	};
 	
 	// --- Functions ---
@@ -75,7 +76,7 @@ public class Main {
 	public Main() {
 		inst = this;
 		
-		window = new Window(800, 600);
+		window = new Window(400, 600);
 		memory = new Memory(345, 368); //Change those fucking numbers
 	}
 	

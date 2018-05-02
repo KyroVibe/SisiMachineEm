@@ -12,10 +12,10 @@ public class Memory {
 	public JFrame frame;
 	
 	public Memory(int width, int height) {
-		frame = new JFrame("FFUCUUCKCKCKCKCKKC");
+		frame = new JFrame("Memory");
 		frame.setSize(width, height);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setLocationRelativeTo(null);
+		//frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
 		
 		//Insert all shit here

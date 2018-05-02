@@ -20,7 +20,7 @@ public class Window {
 	public JFrame frame;
 	
 	public Window(int width, int height) {
-		frame = new JFrame("FFUCUUCKCKCKCKCKKC");
+		frame = new JFrame("Cpu");
 		frame.setSize(width, height);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
@@ -56,12 +56,27 @@ public class Window {
 		//Buttons
 		Step = CreateButton(60, 180, 160, 30, "Step");
 		Step.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Main.inst.Step();
 			}
-			
+		});
+		ClearCpu = CreateButton(60, 220, 160, 30, "Clear");
+		ClearCpu.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				for (int x = 0; x < Main.inst.memory.RamArray.size(); x++) {
+					for (int y = 0; y < Main.inst.memory.RamArray.get(0).size(); y++) {
+						Main.inst.memory.RamArray.get(x).get(y).setText("00");
+					}
+				}
+				
+				for (int i = 0; i < regs.size(); i++) {
+					regs.get(i).setText("00");
+				}
+				
+				Clear();
+			}
 		});
 	}
 	
@@ -90,6 +105,15 @@ public class Window {
 		button.setVisible(true);
 		
 		return button;
+	}
+	
+	public void Clear() {
+		Main.inst.pcX = 0;
+		Main.inst.pcY = 0;
+		PC.setText("PC | 00");
+		IR.setText("IR | ");
+		Decoded.setText("Decoded | ");
+		Stage.setText("Stage | ");
 	}
 	
 	
