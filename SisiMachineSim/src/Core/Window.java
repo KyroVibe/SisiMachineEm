@@ -112,6 +112,7 @@ public class Window {
 	public void Clear() {
 		Main.inst.pcX = 0;
 		Main.inst.pcY = 0;
+		Main.inst.stage = 0;
 		PC.setText("PC | 00");
 		IR.setText("IR | ");
 		Decoded.setText("Decoded | ");
