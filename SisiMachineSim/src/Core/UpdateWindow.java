@@ -2,7 +2,6 @@ package Core;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class UpdateWindow {
@@ -18,7 +17,6 @@ public class UpdateWindow {
 	public void InitWindow() {
 		frame = new JFrame("Update");
 		frame.setSize(500, 100);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
 		
@@ -33,9 +31,24 @@ public class UpdateWindow {
 	}
 	
 	public void Create() {
-		CreateText(10, 10, 180, 20, false, "Update Available | Update Now?");
+		CreateText(10, 10, 180, 20, false, "Update Available");
 		
+		/*update = CreateButton(200, 10, 100, 30, "Update");
+		close = CreateButton(310, 10, 100, 30, "Later");
 		
+		update.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Main.inst.updater.UpdateApplication();
+			}
+		});
+		
+		close.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+			}
+		});*/
 	}
 	
 	public JTextField CreateText(int x, int y, int width, int height, boolean editable, String txt) {

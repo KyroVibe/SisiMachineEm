@@ -18,7 +18,7 @@ public class Main {
 	
 	public Window window;
 	public Memory memory;
-	public UpdateWindow win;
+	public Updater updater;
 	
 	public String[] hexChar = new String[] {
 		"0",
@@ -79,10 +79,10 @@ public class Main {
 	public Main() {
 		inst = this;
 		
-		win = new UpdateWindow();
-		
 		window = new Window(400, 600);
 		memory = new Memory(345, 368); //Change those %%%%ing numbers
+		
+		updater = new Updater();
 	}
 	
 	
