@@ -11,7 +11,7 @@ public class Window {
 	// --- Variables ---
 	
 	public JTextField IR, PC, Decoded, Stage;
-	public JButton ClearRun, ClearCpu, Run, Step;
+	public JButton ClearRam, ClearCpu, Run, Step;
 	
 	public List<JTextField> regs = new ArrayList<JTextField>();
 	
@@ -59,8 +59,19 @@ public class Window {
 				Main.inst.Step();
 			}
 		});
-		ClearCpu = CreateButton(60, 220, 160, 30, "Clear");
+		ClearCpu = CreateButton(60, 220, 160, 30, "ClearCpu");
 		ClearCpu.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				for (int i = 0; i < regs.size(); i++) {
+					regs.get(i).setText("00");
+				}
+				
+				Clear();
+			}
+		});
+		ClearRam = CreateButton(60, 260, 160, 30, "Clear Ram");
+		ClearRam.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				for (int x = 0; x < Main.inst.memory.RamArray.size(); x++) {
@@ -68,12 +79,6 @@ public class Window {
 						Main.inst.memory.RamArray.get(x).get(y).setText("00");
 					}
 				}
-				
-				for (int i = 0; i < regs.size(); i++) {
-					regs.get(i).setText("00");
-				}
-				
-				Clear();
 			}
 		});
 	}

@@ -10,6 +10,8 @@ public class Main {
 	
 	public static Main inst;
 	
+	protected final boolean debug = false;
+	
 	public int pcX = 0, pcY = 0, stage = 0;
 	
 	public String ir;
@@ -98,7 +100,7 @@ public class Main {
 			Execute();
 			stage = 0;
 		} else {
-			System.out.println("Very big problem");
+			print("Very big problem");
 		}
 	}
 	
@@ -106,6 +108,7 @@ public class Main {
 		print("\n--- Fetch ---\n");
 		
 		ir = memory.RamArray.get(pcX).get(pcY).getText() + memory.RamArray.get(pcX + 1).get(pcY).getText();
+		ir = ir.toUpperCase();
 		window.IR.setText("IR | " + ir);
 		print(ir);
 		
@@ -129,7 +132,7 @@ public class Main {
 		
 		String a = opcodes[HexToDec(String.valueOf(ir.charAt(0)))].Decode(ir);
 		
-		System.out.println("Decoded | " + a);
+		print("Decoded | " + a);
 		
 		window.Decoded.setText("Decoded | " + a);
 	}
@@ -161,7 +164,8 @@ public class Main {
 	}
 	
 	public void print(Object a) {
-		System.out.println(a.toString());
+		if (debug)
+			System.out.println(a.toString());
 	}
 	
 	public Byte HexToByte(String h) {

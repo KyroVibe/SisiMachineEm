@@ -1,5 +1,7 @@
 package Opcode;
 
+import Core.Main;
+
 public class OpcodeError extends Opcode {
 
 	@Override
@@ -10,6 +12,8 @@ public class OpcodeError extends Opcode {
 	@Override
 	public void Execute(String ir) {
 		//Stop Run/Reset
+		
+		Main.inst.window.Clear();
 	}
 
 }

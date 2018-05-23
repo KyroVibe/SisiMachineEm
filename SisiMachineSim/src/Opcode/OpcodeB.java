@@ -17,7 +17,7 @@ public class OpcodeB extends Opcode {
 		int one = Main.inst.HexToDec(String.valueOf(ir.charAt(1)));
 		JTextField r1 = Main.inst.window.regs.get(one);
 		JTextField r2 = Main.inst.window.regs.get(0);
-		if (r2.getText().equals(r1.getText())) {
+		if (r2.getText().toUpperCase().equals(r1.getText().toUpperCase())) {
 			Main.inst.pcX = Main.inst.HexToDec(String.valueOf(ir.charAt(3)));
 			Main.inst.pcY = Main.inst.HexToDec(String.valueOf(ir.charAt(2)));
 		}
