@@ -14,10 +14,11 @@ public class Main {
 	
 	public int pcX = 0, pcY = 0, stage = 0;
 	
-	public String ir;
+	public String ir, version = "1.0.3";
 	
 	public Window window;
 	public Memory memory;
+	public UpdateWindow win;
 	
 	public String[] hexChar = new String[] {
 		"0",
@@ -77,6 +78,8 @@ public class Main {
 	
 	public Main() {
 		inst = this;
+		
+		win = new UpdateWindow();
 		
 		window = new Window(400, 600);
 		memory = new Memory(345, 368); //Change those %%%%ing numbers
