@@ -10,7 +10,7 @@ public class Window {
 	
 	// --- Variables ---
 	
-	public JTextField IR, PC, Decoded, Stage;
+	public JTextField IR, PC, Decoded, Stage, GPR;
 	public JButton ClearRam, ClearCpu, Run, Step;
 	
 	public List<JTextField> regs = new ArrayList<JTextField>();
@@ -39,7 +39,7 @@ public class Window {
 		//CreateText(0, 0, 20, 20, true, "00");
 		
 		//Create Registers and Buttons and Counters Here
-		CreateText(0, 0, 40, 20, false, "GPRs");
+		GPR = CreateText(0, 0, 40, 20, false, "GPRs");
 		
 		for (int i = 0; i < 16; i++) {
 			up.add(CreateText(0, 20 + i * 20, 20, 20, false, Main.inst.DecToHex(i)));

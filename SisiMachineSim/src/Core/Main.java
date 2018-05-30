@@ -113,6 +113,7 @@ public class Main {
 		for (JTextField a : window.up) {
 			a.setText(a.getText());
 		}
+		window.GPR.setText(window.GPR.getText());
 		
 		for (List<JTextField> a : memory.RamArray) {
 			for (JTextField b : a) {
