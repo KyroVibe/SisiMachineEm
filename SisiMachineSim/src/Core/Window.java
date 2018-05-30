@@ -99,7 +99,7 @@ public class Window {
 		a.setText(txt);
 		
 		frame.add(a);
-		a.setVisible(true);
+		//a.setVisible(true);
 		
 		return a;
 	}
@@ -109,7 +109,7 @@ public class Window {
 		button.setBounds(x, y, width, height);
 		
 		frame.add(button);
-		button.setVisible(true);
+		//button.setVisible(true);
 		
 		return button;
 	}
