@@ -14,6 +14,7 @@ public class Window {
 	public JButton ClearRam, ClearCpu, Run, Step;
 	
 	public List<JTextField> regs = new ArrayList<JTextField>();
+	public List<JTextField> up = new ArrayList<JTextField>();
 	
 	public JFrame frame;
 	
@@ -41,7 +42,7 @@ public class Window {
 		CreateText(0, 0, 40, 20, false, "GPRs");
 		
 		for (int i = 0; i < 16; i++) {
-			CreateText(0, 20 + i * 20, 20, 20, false, Main.inst.DecToHex(i));
+			up.add(CreateText(0, 20 + i * 20, 20, 20, false, Main.inst.DecToHex(i)));
 			regs.add(CreateText(20, 20 + i * 20, 20, 20, false, "00"));
 		}
 		

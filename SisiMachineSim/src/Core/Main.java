@@ -97,11 +97,11 @@ public class Main {
 			a.setText(a.getText());
 		}
 		try {
-		window.ClearCpu.setText(window.ClearCpu.getText());
-		window.ClearRam.setText(window.ClearRam.getText());
-		window.Run.setText(window.Run.getText());
-		window.Step.setText(window.Step.getText());
-		} catch (Exception e) {}
+			window.ClearCpu.setText(window.ClearCpu.getText());
+			window.ClearRam.setText(window.ClearRam.getText());
+			window.Run.setText(window.Run.getText());
+			window.Step.setText(window.Step.getText());
+		} catch (Exception e) { }
 		
 		window.IR.setText(window.IR.getText());
 		window.PC.setText(window.PC.getText());
