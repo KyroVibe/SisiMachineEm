@@ -2,9 +2,20 @@ package Core;
 
 import Opcode.*;
 
+import java.awt.EventQueue;
+
+import javax.swing.*;
+
 public class Main {
 	
-	public static void main(String[] args) { new Main(); }
+	public static void main(String[] args) { 
+		EventQueue.invokeLater(new Runnable() {
+	        public void run() {
+	            //.. Create UI
+	        	new Main();
+	        }
+	    });
+	}
 	
 	// --- Variables ---
 	
@@ -83,6 +94,15 @@ public class Main {
 		memory = new Memory(345, 368); //Change those %%%%ing numbers
 		
 		updater = new Updater();
+		
+		//JankSolution();
+	}
+	
+	public void JankSolution() {
+		for (JTextField a : window.regs) {
+			a.setText(a.getText());
+		}
+		
 	}
 	
 	
