@@ -8,6 +8,7 @@ public class Memory {
 	// --- Variables ---
 	
 	public List<List<JTextField>> RamArray = new ArrayList<List<JTextField>>();
+	public List<JTextField> up = new ArrayList<JTextField>(), right = new ArrayList<JTextField>();;
 
 	public JFrame frame;
 	
@@ -20,10 +21,10 @@ public class Memory {
 		
 		//Insert all shit here
 		for (int x = 0; x < 16; x++) {
-			CreateText(20 + x * 20, 0, 20, 20, false, Main.inst.hexChar[x]);
+			right.add(CreateText(20 + x * 20, 0, 20, 20, false, Main.inst.hexChar[x]));
 		}
 		for (int y = 0; y < 16; y++) {
-			CreateText(0, 20 + y * 20, 20, 20, false, Main.inst.hexChar[y]);
+			up.add(CreateText(0, 20 + y * 20, 20, 20, false, Main.inst.hexChar[y]));
 		}
 		
 		CreateTable(16, 16);

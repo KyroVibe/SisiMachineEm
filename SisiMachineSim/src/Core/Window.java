@@ -68,6 +68,8 @@ public class Window {
 				}
 				
 				Clear();
+				
+				Main.inst.JankSolution();
 			}
 		});
 		ClearRam = CreateButton(60, 260, 160, 30, "Clear Ram");

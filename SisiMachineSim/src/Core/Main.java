@@ -3,19 +3,13 @@ package Core;
 import Opcode.*;
 
 import java.awt.EventQueue;
+import java.util.List;
 
 import javax.swing.*;
 
 public class Main {
 	
-	public static void main(String[] args) { 
-		EventQueue.invokeLater(new Runnable() {
-	        public void run() {
-	            //.. Create UI
-	        	new Main();
-	        }
-	    });
-	}
+	public static void main(String[] args) { new Main(); }
 	
 	// --- Variables ---
 	
@@ -95,14 +89,35 @@ public class Main {
 		
 		updater = new Updater();
 		
-		//JankSolution();
+		JankSolution();
 	}
 	
 	public void JankSolution() {
 		for (JTextField a : window.regs) {
 			a.setText(a.getText());
 		}
+		window.ClearCpu.setText(window.ClearCpu.getText());
+		window.ClearRam.setText(window.ClearRam.getText());
+		window.Run.setText(window.Run.getText());
+		window.Step.setText(window.Step.getText());
 		
+		window.IR.setText(window.IR.getText());
+		window.PC.setText(window.PC.getText());
+		window.Decoded.setText(window.Decoded.getText());
+		window.Stage.setText(window.Stage.getText());
+		
+		for (List<JTextField> a : memory.RamArray) {
+			for (JTextField b : a) {
+				b.setText(b.getText());
+			}
+		}
+		
+		for (JTextField a : memory.up) {
+			a.setText(a.getText());
+		}
+		for (JTextField a : memory.right) {
+			a.setText(a.getText());
+		}
 	}
 	
 	
