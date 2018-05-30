@@ -25,6 +25,8 @@ public class Main {
 	public Memory memory;
 	public Updater updater;
 	
+	public boolean fixedJank = false;
+	
 	public String[] hexChar = new String[] {
 		"0",
 		"1",
@@ -88,11 +90,12 @@ public class Main {
 		memory = new Memory(345, 368); //Change those %%%%ing numbers
 		
 		updater = new Updater();
-		
-		JankSolution();
 	}
 	
 	public void JankSolution() {
+		if (fixedJank) {
+			return;
+		}
 		for (JTextField a : window.regs) {
 			a.setText(a.getText());
 		}
@@ -107,6 +110,9 @@ public class Main {
 		window.PC.setText(window.PC.getText());
 		window.Decoded.setText(window.Decoded.getText());
 		window.Stage.setText(window.Stage.getText());
+		for (JTextField a : window.up) {
+			a.setText(a.getText());
+		}
 		
 		for (List<JTextField> a : memory.RamArray) {
 			for (JTextField b : a) {
@@ -120,6 +126,8 @@ public class Main {
 		for (JTextField a : memory.right) {
 			a.setText(a.getText());
 		}
+		
+		fixedJank = true;
 	}
 	
 	

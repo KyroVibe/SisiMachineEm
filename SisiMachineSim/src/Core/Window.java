@@ -60,7 +60,7 @@ public class Window {
 				Main.inst.Step();
 			}
 		});
-		ClearCpu = CreateButton(60, 220, 160, 30, "ClearBAH");
+		ClearCpu = CreateButton(60, 220, 160, 30, "ClearCpu");
 		ClearCpu.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
