@@ -90,6 +90,9 @@ public class Main {
 		memory = new Memory(345, 368); //Change those %%%%ing numbers
 		
 		updater = new Updater();
+		
+		// Attemp to fix
+		new JustFix().Start();
 	}
 	
 	public void JankSolution() {
